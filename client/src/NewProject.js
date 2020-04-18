@@ -1,18 +1,26 @@
 import React, { Component } from 'react'
+import createProject from './actions/createProject';
+import { connect } from 'react-redux';
 
 class NewProject extends Component {
     constructor() {
         super()
         this.state = {
             title:'',
-            content:''
+            content:'',
+            user_id:''
         }
     }
 
     handleChange=(e)=>{
         this.setState({
-            [e.target.name]:e.target.value
+            [e.target.name]:e.target.value,
+            user_id:this.props.currentUser.id
         })
+    }
+
+    handleSubmit=(e)=>{
+        this.props.createProject(this.state)
     }
 
     render() {
@@ -28,4 +36,9 @@ class NewProject extends Component {
     }
 }
 
-export default NewProject
+const mstp=(state)=>{
+    return{
+        currentUser:state.user.user
+    }
+}
+export default connect(mstp,{createProject})(NewProject)

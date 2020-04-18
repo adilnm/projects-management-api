@@ -1,4 +1,4 @@
-export default function(project){
+export default function(project, ownProps){
     return dispatch=>{
         fetch('http://localhost:3001/projects', {
             method: 'POST',
@@ -11,6 +11,7 @@ export default function(project){
         .then(res=>res.json())
         .then(user=>{
             dispatch({type:'ADD_PROJECT',preload:user})
+            ownProps.history.push('/');
         })
     }
 }

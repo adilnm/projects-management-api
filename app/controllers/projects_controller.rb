@@ -8,7 +8,7 @@ class ProjectsController < ApplicationController
     def create
         project=Project.new(projects_params)
         if project.save
-            render json:{project:project}
+            render json:project.to_json(:include => :user)
         else
             render json:{error:'error'}
         end

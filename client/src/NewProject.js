@@ -20,6 +20,7 @@ class NewProject extends Component {
     }
 
     handleSubmit=(e)=>{
+        e.preventDefault()
         this.props.createProject(this.state)
     }
 
@@ -41,4 +42,10 @@ const mstp=(state)=>{
         currentUser:state.user.user
     }
 }
-export default connect(mstp,{createProject})(NewProject)
+
+const mdtp=(dispatch, ownProps)=>{
+    return {
+        createProject: project => dispatch(createProject(project, ownProps)),
+        };
+}
+export default connect(mstp,mdtp)(NewProject)

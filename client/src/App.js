@@ -6,11 +6,13 @@ import Home from './Home';
 import { connect } from 'react-redux';
 import loginStatus from './actions/loginStatus';
 import NewProject from './NewProject';
+import projects from './actions/projects';
 
 class App extends Component {
 
   render() {
     this.props.loginStatus()
+    this.props.projects()
     return (
       <div className="App">
         <Router>
@@ -24,4 +26,4 @@ class App extends Component {
   }
 }
 
-export default connect(null,{loginStatus})(App);
+export default connect(null,{loginStatus, projects})(App);

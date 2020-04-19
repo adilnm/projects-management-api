@@ -1,6 +1,6 @@
 export default function(){
     return dispatch=>{
-        fetch('http://localhost:3001/projects', {
+        fetch('/projects', {
             credentials: 'include',
         })
         .then(res=>res.json())

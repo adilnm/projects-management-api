@@ -1,6 +1,6 @@
 export default function (user) {
     return dispatch => {
-        fetch('http://localhost:3001/users', {
+        fetch('/users', {
             method: 'POST',
             credentials: 'include',
             headers: {

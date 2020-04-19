@@ -1,6 +1,6 @@
 export default function(project, ownProps){
     return dispatch=>{
-        fetch('http://localhost:3001/projects', {
+        fetch('/projects', {
             method: 'POST',
             credentials: 'include',
             headers: {

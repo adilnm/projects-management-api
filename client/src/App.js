@@ -27,5 +27,9 @@ class App extends Component {
     );
   }
 }
-
-export default connect(null,{loginStatus, projects})(App);
+const mstp=(state)=>{
+  return{
+      loggedIn:state.user.logged_in
+  }
+}
+export default connect(mstp,{loginStatus, projects})(App);

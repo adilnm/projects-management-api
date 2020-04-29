@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-export default class Navbar extends Component {
+class Navbar extends Component {
     render() {
+        const {loggedIn}=this.props
         return (
             <div>
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
@@ -19,21 +21,29 @@ export default class Navbar extends Component {
 
                     </ul>
 
-                    {/* <ul className="navbar-nav">
+                    <ul className="navbar-nav">
                         <li className="nav-item">
-                            {!currentUser[0].logged_in ? <Link className="nav-link" to="/login">Login</Link> : null}
+                            {!loggedIn? <Link className="nav-link" to="/login">Login</Link> : null}
                         </li>
                         <li className="nav-item">
-                            {!currentUser[0].logged_in ? <Link className="nav-link" to="/signup">Signup</Link> : null}
+                            {!loggedIn ? <Link className="nav-link" to="/signup">Signup</Link> : null}
                         </li>
                         <li className="nav-item">
-                            {currentUser[0].logged_in ? <Link className="nav-link" to="/logout">Logout</Link> : null}
+                            {loggedIn?<Link className="nav-link" to="/logout">Logout</Link>:null}
                         </li>
                         
-                    </ul> */}
+                    </ul>
                 </div>
             </nav>
             </div>
         )
     }
 }
+
+const mstp=(state)=>{
+    return{
+        loggedIn:state.user.login
+    }
+}
+
+export default connect(mstp)(Navbar)

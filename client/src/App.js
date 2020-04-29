@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import loginStatus from './actions/loginStatus';
 import NewProject from './NewProject';
 import projects from './actions/projects';
+import Logout from './Logout';
 
 class App extends Component {
 
@@ -20,6 +21,7 @@ class App extends Component {
           <Route exact path="/login" component={Login} />
           <Route exact path="/" component={Home} />
           <Route exact path="/new" component={NewProject} />
+          <Route exact path="/logout" component={Logout} />
         </Router>
       </div>
     );

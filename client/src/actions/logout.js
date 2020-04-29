@@ -4,5 +4,6 @@ export default function () {
             method: 'DELETE',
             credentials: 'include'
         })
+        .then(()=>dispatch({type:'LOGOUT'}))
     }
 }

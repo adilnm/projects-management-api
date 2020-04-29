@@ -23,10 +23,10 @@ class Navbar extends Component {
 
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            {loggedIn!=undefined && !loggedIn? <Link className="nav-link" to="/login">Login</Link> : null}
+                            {loggedIn!==undefined && !loggedIn? <Link className="nav-link" to="/login">Login</Link> : null}
                         </li>
                         <li className="nav-item">
-                            {loggedIn!=undefined && !loggedIn ? <Link className="nav-link" to="/signup">Signup</Link> : null}
+                            {loggedIn!==undefined && !loggedIn ? <Link className="nav-link" to="/signup">Signup</Link> : null}
                         </li>
                         <li className="nav-item">
                             {loggedIn?<Link className="nav-link" to="/logout">Logout</Link>:null}

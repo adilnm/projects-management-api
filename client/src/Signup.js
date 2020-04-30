@@ -26,8 +26,13 @@ class Signup extends Component {
         this.props.history.push('/')
     }
     render() {
+        const {loggedin,history}=this.props
+        if (loggedin===undefined) {
+            return <div></div>
+        }
         return (
             <div>
+                {loggedin?history.push('/'):null}
                 <Navbar/>
                 <h1>Signup</h1>
                 <form onSubmit={this.handleSubmit}>
@@ -42,4 +47,9 @@ class Signup extends Component {
     }
 }
 
-export default connect(null, { auth })(Signup)
+const mstp=state=>{
+    return{
+        loggedin:state.user.logged_in
+    }
+}
+export default connect(mstp, { auth })(Signup)

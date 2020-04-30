@@ -24,7 +24,7 @@ class Home extends Component {
                             <div className="card-body">
                                 <h5 className="card-title">Notifications</h5>
                                 {allProjects.slice(l - 3, l).map(project => {
-                                    return <p className="card-text">{project.user.name} added a new project</p>
+                                    return <p key={project.id} className="card-text">{project.user.name} added a new project</p>
                                 })}
 
                             </div>

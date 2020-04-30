@@ -22,6 +22,7 @@ class Signup extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         this.props.auth(this.state)
+        this.props.history.push('/')
     }
     render() {
         return (

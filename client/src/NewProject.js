@@ -15,7 +15,7 @@ class NewProject extends Component {
     handleChange=(e)=>{
         this.setState({
             [e.target.name]:e.target.value,
-            user_id:this.props.currentUser.id
+            user_id:this.props.currentUser.user.id
         })
     }
 
@@ -25,8 +25,13 @@ class NewProject extends Component {
     }
 
     render() {
+        const {currentUser, history}=this.props
+        if (currentUser===undefined|| Object.keys(currentUser).length===0) {
+            return <div></div>
+        }
         return (
             <div>
+                {!currentUser.logged_in?history.push('/login'):null}
                 <form onSubmit={this.handleSubmit}>
                     <input onChange={this.handleChange} type="text" name="title" placeholder="Title"/><br/>
                     <textarea onChange={this.handleChange} name="content" cols="30" rows="10" placeholder="Content"></textarea><br/>
@@ -39,7 +44,7 @@ class NewProject extends Component {
 
 const mstp=(state)=>{
     return{
-        currentUser:state.user.user
+        currentUser:state.user
     }
 }
 

@@ -25,8 +25,13 @@ class Login extends Component {
         this.props.history.push('/')
     }
     render() {
+        const {loggedin,history}=this.props
+        if (loggedin===undefined) {
+            return <div></div>
+        }
         return (
             <div>
+                {loggedin?history.push('/'):null}
                 <h1>Login</h1>
                 <form onSubmit={this.handleSubmit}>
                     <input onChange={this.handleChange} type="text" name="username" placeholder="Username"/><br/>    
@@ -38,4 +43,9 @@ class Login extends Component {
     }
 }
 
-export default connect(null,{login})(Login)
+const mstp=state=>{
+    return{
+        loggedin:state.user.logged_in
+    }
+}
+export default connect(mstp,{login})(Login)

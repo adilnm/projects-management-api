@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import createProject from './actions/createProject';
 import { connect } from 'react-redux';
+import Navbar from './Navbar';
 
 class NewProject extends Component {
     constructor() {
@@ -32,6 +33,7 @@ class NewProject extends Component {
         return (
             <div>
                 {!currentUser.logged_in?history.push('/login'):null}
+                <Navbar/>
                 <form onSubmit={this.handleSubmit}>
                     <input onChange={this.handleChange} type="text" name="title" placeholder="Title"/><br/>
                     <textarea onChange={this.handleChange} name="content" cols="30" rows="10" placeholder="Content"></textarea><br/>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import auth from './actions/auth';
+import Navbar from './Navbar';
 
 class Signup extends Component {
     constructor() {
@@ -27,6 +28,7 @@ class Signup extends Component {
     render() {
         return (
             <div>
+                <Navbar/>
                 <h1>Signup</h1>
                 <form onSubmit={this.handleSubmit}>
                     <input onChange={this.handleChange} type="text" name="name" placeholder="Name" /><br />

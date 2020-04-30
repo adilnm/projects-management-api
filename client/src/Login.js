@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import login from './actions/login';
+import Navbar from './Navbar';
 
 class Login extends Component {
     constructor(){
@@ -32,6 +33,7 @@ class Login extends Component {
         return (
             <div>
                 {loggedin?history.push('/'):null}
+                <Navbar/>
                 <h1>Login</h1>
                 <form onSubmit={this.handleSubmit}>
                     <input onChange={this.handleChange} type="text" name="username" placeholder="Username"/><br/>    

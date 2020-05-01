@@ -1,8 +1,10 @@
 class ProjectsController < ApplicationController
+    include ActionView::Helpers::DateHelper
+
     def index
         projects=Project.all
         
-        render json: projects.to_json(:include => :user)
+        render json: projects , status: 200
     end
 
     def create

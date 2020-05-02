@@ -11,12 +11,13 @@ import Navbar from './Navbar';
             project:''
         }
     }
-    componentDidMount=()=>{
+    shouldComponentUpdate=()=>{
         this.setState({
             project:this.props.projects.filter(project=>project.id=this.state.id)
         })
     }
     render() {
+        console.log(this.state.project)
         return (
             <div>
                 <Navbar/>

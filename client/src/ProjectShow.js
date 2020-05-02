@@ -3,18 +3,31 @@ import { connect } from 'react-redux';
 import Navbar from './Navbar';
 
  class ProjectShow extends Component {
+
+    constructor(props){
+        super()
+        this.state={
+            id:props.match.params.projectId,
+            project:''
+        }
+    }
+    componentDidMount=()=>{
+        this.setState({
+            project:this.props.projects.filter(project=>project.id=this.state.id)
+        })
+    }
     render() {
-        console.log(this.props.match.params.projectId)
         return (
             <div>
                 <Navbar/>
-                jjjj
             </div>
         )
     }
 }
 
 const mstp=state=>{
-    // project:state.projects.filter(i=>i.id===)
+    return {
+        projects:state.projects
+    }
 }
 export default connect (mstp)(ProjectShow)

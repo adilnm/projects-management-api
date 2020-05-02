@@ -11,16 +11,24 @@ import Navbar from './Navbar';
             project:''
         }
     }
-    shouldComponentUpdate=()=>{
+
+    changeState=()=>{
         this.setState({
             project:this.props.projects.filter(project=>project.id=this.state.id)
         })
     }
     render() {
-        console.log(this.state.project)
+        const{projects}=this.props
+        let project=''
+        if (projects.length>0) {
+            project=projects.filter(project=>project.id==this.state.id)[0]
+            
+        }
         return (
             <div>
                 <Navbar/>
+                {/* {projects.length>0?this.changeState():null} */}
+                <p>{project.content}</p>
             </div>
         )
     }

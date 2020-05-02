@@ -23,7 +23,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/new" component={NewProject} />
           <Route exact path="/logout" component={Logout} />
-          <Route path={"/:projectId"} component={ProjectShow}/>
+          <Route exact path={"/projects/:projectId"} component={ProjectShow}/>
 
         </Router>
       </div>

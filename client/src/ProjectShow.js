@@ -27,7 +27,7 @@ import Navbar from './Navbar';
         return (
             <div>
                 <Navbar/>
-                {/* {projects.length>0?this.changeState():null} */}
+                <h1>{project.title}</h1>
                 <p>{project.content}</p>
             </div>
         )

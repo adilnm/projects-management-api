@@ -10,6 +10,8 @@ import projects from './actions/projects';
 import Logout from './Logout';
 import ProjectShow from './ProjectShow';
 import myprojects from './actions/myprojects';
+import MyProjects from './MyProjects';
+
 
 class App extends Component {
 
@@ -25,6 +27,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/new" component={NewProject} />
           <Route exact path="/logout" component={Logout} />
+          <Route exact path="/myprojects" component={MyProjects} />
           <Route exact path={"/projects/:projectId"} component={ProjectShow}/>
 
         </Router>

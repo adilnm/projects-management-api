@@ -11,6 +11,7 @@ class Home extends Component {
     }
     render() {
         const { allProjects } = this.props
+        console.log(allProjects)
         const l = allProjects.length
         return (
             <div>

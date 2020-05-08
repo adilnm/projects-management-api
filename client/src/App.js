@@ -9,12 +9,14 @@ import NewProject from './NewProject';
 import projects from './actions/projects';
 import Logout from './Logout';
 import ProjectShow from './ProjectShow';
+import myprojects from './actions/myprojects';
 
 class App extends Component {
 
   render() {
     this.props.loginStatus()
     this.props.projects()
+    this.props.myprojects()
     return (
       <div className="App">
         <Router>
@@ -35,4 +37,4 @@ const mstp=(state)=>{
       loggedIn:state.user.logged_in
   }
 }
-export default connect(mstp,{loginStatus, projects})(App);
+export default connect(mstp,{loginStatus, projects, myprojects})(App);

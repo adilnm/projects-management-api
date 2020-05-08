@@ -3,6 +3,9 @@ export default function(id){
         fetch('/myprojects', {
             credentials: 'include'
         })
-
+        .then(res=>res.json())
+        .then(projects=>{
+            dispatch({type:'MY_PROJECTS', preload:projects})
+        })
     }
 }

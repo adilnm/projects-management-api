@@ -16,6 +16,10 @@ class ProjectsController < ApplicationController
         end
     end
 
+    def my_projects
+        render json: current_user.projects
+    end
+
     def projects_params
         params.require(:project).permit(:title, :content, :user_id)
     end

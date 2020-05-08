@@ -1,5 +1,8 @@
 export default function(id){
     return dispatch=>{
-        fetch()
+        fetch('/myprojects', {
+            credentials: 'include'
+        })
+
     }
 }

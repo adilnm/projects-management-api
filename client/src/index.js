@@ -8,11 +8,13 @@ import auth from './Reducers/auth';
 import thunk from 'redux-thunk';
 import projects from './Reducers/projects';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import myProjects from './Reducers/myProjects';
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const rootReducer = combineReducers({
   user:auth,
-  projects
+  projects,
+  myProjects
 })
 
 const store = createStore(

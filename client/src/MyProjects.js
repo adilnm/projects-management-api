@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import Navbar from './Navbar';
-import ProjectsList from './ProjectsList';
+import MyProjectsList from './MyProjectsList';
 
 class MyProjects extends Component {
     render() {
         return (
             <div>
                 {<Navbar/>}
-                {this.props.myProjects.map(project => <ProjectsList key={project.id} project={project} />)}
+                {this.props.myProjects.map(project => <MyProjectsList key={project.id} project={project} />)}
             </div>
         )
     }

@@ -4,6 +4,6 @@ export default function (id) {
             method: 'DELETE',
             credentials: 'include'
         })
-        
+        .then(id=>dispatch({type:'DELETE_PROJECT',preload:id}))
     }
 }

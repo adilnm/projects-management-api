@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
+import { connect } from 'react-redux';
+import deleteProject from './actions/deleteProject';
 
-export default class MyProjectsLists extends Component {
+class MyProjectsLists extends Component {
 
     handleDelete=(e)=>{
-        
+
     }
     render(){
         const { project } = this.props
@@ -22,3 +24,5 @@ export default class MyProjectsLists extends Component {
         )
     }
 }
+
+export default connect(null,{ deleteProject})(MyProjectsLists)

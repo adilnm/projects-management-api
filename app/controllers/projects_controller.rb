@@ -16,6 +16,10 @@ class ProjectsController < ApplicationController
         end
     end
 
+    def destroy
+        project=Project.find(params[:id])
+    end
+
     def my_projects
         render json: current_user.projects
     end
